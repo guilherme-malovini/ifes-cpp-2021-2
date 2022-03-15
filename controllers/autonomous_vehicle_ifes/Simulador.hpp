@@ -211,6 +211,11 @@ public:
 
         motorista.setCruisingSpeed(kmh);
     }
+    void aceleracao(double coordx, double coordz, int velocidade){
+      float gap = std::hypot(coordx - getX(), coordz - getZ());
+      if(gap < 1.5)
+      set_speed(velocidade);
+      }
 
     void set_autodrive(bool onoff) {
         if (autodrive == onoff)
@@ -219,7 +224,7 @@ public:
         if (autodrive) {
             if (has_camera) {
                 std::cout << "switching to auto-drive...\n";
-                set_speed(50.0); // km/h
+                set_speed(82.0); // km/h
             } else
             std::cout << "impossible to switch auto-drive on without camera...\n";
         } else {

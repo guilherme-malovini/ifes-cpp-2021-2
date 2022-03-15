@@ -99,8 +99,13 @@ int main(int argc, char **argv) {
         else {
           // no obstacle has been detected but we lost the line => we brake and
           // hope to find the line again
-          simulador.setBrakeIntensity(0.4);
+          simulador.setBrakeIntensity(0.5);
         }
+        simulador.aceleracao(60.2,104.7,75);
+        simulador.aceleracao(103.7,74.7,60);
+        simulador.aceleracao(103.8,35,82);
+        simulador.aceleracao(102.4,-21.4,77);
+        simulador.aceleracao(73,-43.8,120);
       }
 
       simulador.update();
